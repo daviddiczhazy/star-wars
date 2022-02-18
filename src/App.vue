@@ -1,12 +1,47 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <StarWars msg="StarWars search" @starwars-characters="sendCharacters" @search-text="checkInput" />
+    <CharacterList :characters="characters" :check="check"></CharacterList>
   </div>
 </template>
+
+<script>
+// @ is an alias to /src
+import StarWars from "@/views/StarWars.vue";
+import CharacterList from '@/views/CharacterList.vue';
+
+export default {
+  name: "Home",
+  components: {
+    StarWars,
+    CharacterList
+  },
+  data() {
+    return {
+      characters: [],
+      check: false,
+    }
+  },
+
+  methods: {
+    
+    // Sending prop characters to CharacterList after api calls returned back from child element StarWars
+    sendCharacters(names) {
+      this.characters = names
+    },
+
+    // checks if trere is any string presented in input field
+    checkInput(check) {
+    if(check) {
+      this.check = true
+    } else {this.check = false}
+  }
+
+  },
+
+};
+</script>
+
 
 <style>
 #app {
