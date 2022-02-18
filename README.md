@@ -22,3 +22,11 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
+### 1, Before the actual search
+```
+
+```
+
+![image](https://user-images.githubusercontent.com/32029267/154693213-7dbc4e49-b794-43b1-89f3-3c018002f3b3.png)
